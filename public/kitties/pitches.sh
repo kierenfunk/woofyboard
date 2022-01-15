@@ -1,5 +1,4 @@
-
-#ffmpeg -y -i "%TMPFILE1%" -af "%RAISE_PITCH_01%" "%TMPFILE2%"
+# http://www.geekybob.com/post/Adjusting-Pitch-for-MP3-Files-with-FFmpeg
 
 DR=('asetrate=46722.3224612449211671764955071340,atempo=0.94387431268169349664191315666753'
 'asetrate=49500.5763304433484812188074908520,atempo=0.89089871814033930474022620559051'
@@ -29,7 +28,6 @@ AR=('asetrate=41624.8571892626832019083702090380,atempo=1.0594630943592952645618
 
 for i in "${!DR[@]}"; do
     let x=$((i+1))
-    echo "$x"
     ffmpeg -i cat.mp3 -af "${DR[i]}" "cat$x.mp3"
 done
 

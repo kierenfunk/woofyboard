@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react'
 import * as Tone from 'tone'
 
 // Y is the middle key
-
-
 const BlackKey = ({char, pressed, hidden, handleClick}) => (
     <div onClick={handleClick} style={{
         height:'200px',
@@ -134,7 +132,7 @@ const Index = () => {
     }
 
     if(!tones)
-        return null
+        return <div>Loading...</div>
     return (
         <div style={{
             position:'absolute',
@@ -144,13 +142,23 @@ const Index = () => {
             left:0,
             backgroundColor:'orange',
             display:'flex',
+            flexDirection: 'column',
             alignItems:'center',
             justifyContent: 'center',
             backgroundImage: `url('images/bg.png')`,
             backgroundRepeat: 'repeat',
             overflow: 'hidden'
         }}>
-            <Keyboard {...{keys,blackKeyMapping, playSound}}/>
+            <div style={{flexGrow: 1,
+                    display:'flex',
+                    alignItems:'center',
+                    justifyContent: 'center',
+            }}>
+                    <Keyboard {...{keys,blackKeyMapping, playSound}}/>
+            </div>
+            <div style={{backgroundColor: 'white', padding:'6px'}}>
+                Made by <a href="https://www.twitter.com/kierenfunk">@kierenfunk</a>
+            </div>
         </div>
     )
 }
