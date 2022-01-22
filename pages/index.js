@@ -117,7 +117,7 @@ const Index = () => {
         }).filter(key=>key[2])
         const middle = x.reduce((index,key,i)=>key[1]==='Y'? i : index,0)
 
-        const test = x.map((key,i)=>(new Tone.Player(`kitties/cat${i-middle}.mp3`).toDestination()))
+        const test = x.map((key,i)=>(new Tone.Player(`doggos/dog${i-middle}.mp3`).toDestination()))
         Tone.loaded().then(() => {
             const temp = test.reduce(
                 (obj,tone,i)=>{

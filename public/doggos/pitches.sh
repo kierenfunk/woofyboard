@@ -28,12 +28,12 @@ AR=('asetrate=41624.8571892626832019083702090380,atempo=1.0594630943592952645618
 
 for i in "${!DR[@]}"; do
     let x=$((i+1))
-    ffmpeg -i cat.mp3 -af "${DR[i]}" "cat$x.mp3"
+    ffmpeg -i temp.mp3 -af "${DR[i]}" "dog$x.mp3"
 done
 
 for i in "${!AR[@]}"; do
     let x=$((i+1))
-    ffmpeg -i cat.mp3 -af "${AR[i]}" "cat-$x.mp3"
+    ffmpeg -i temp.mp3 -af "${AR[i]}" "dog-$x.mp3"
 done
 
 

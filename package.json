@@ -1,7 +1,7 @@
 {
-  "name": "kittyboard",
+  "name": "woofyboard",
   "version": "1.0.0",
-  "description": "Virtual keyboard in the browser with cats",
+  "description": "Virtual keyboard in the browser with dogs",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
